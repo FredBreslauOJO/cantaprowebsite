@@ -28,7 +28,9 @@ export default function FeatureMatrix() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 mb-16">
-      <div className="w-full overflow-hidden rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+      
+      {/* 🖥️ VERSÃO DESKTOP: TABELA TRADICIONAL COMPLETA */}
+      <div className="hidden md:block w-full overflow-hidden rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
         <table className="w-full text-left border-separate border-spacing-0 min-w-[600px]">
           <thead>
             <tr className="bg-black text-white uppercase font-black text-sm tracking-wider">
@@ -50,6 +52,32 @@ export default function FeatureMatrix() {
           </tbody>
         </table>
       </div>
+
+      {/* 📱 VERSÃO MOBILE: RECURSOS EMPILHADOS EM CASCA (ALTÍSSIMA LEGIBILIDADE) */}
+      <div className="block md:hidden space-y-4">
+        {features.map((row) => (
+          <div key={row.id} className="border-4 border-black p-4 bg-white rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <div className="font-black text-base uppercase border-b-2 border-black pb-2 mb-3 text-black tracking-tight">
+              {row.feature_name}
+            </div>
+            <div className="grid grid-cols-3 gap-2 text-center text-xs">
+              <div className="bg-gray-50 p-2 rounded-xl border-2 border-gray-200">
+                <span className="block text-gray-400 font-black text-[10px] uppercase tracking-wider mb-1">Free</span>
+                <span className={getStyleByText(row.plan_free)}>{row.plan_free}</span>
+              </div>
+              <div className="bg-gray-50 p-2 rounded-xl border-2 border-gray-200">
+                <span className="block text-gray-500 font-black text-[10px] uppercase tracking-wider mb-1">Básico</span>
+                <span className={getStyleByText(row.plan_basic)}>{row.plan_basic}</span>
+              </div>
+              <div className="bg-yellow-400/10 p-2 rounded-xl border-2 border-yellow-400">
+                <span className="block text-yellow-700 font-black text-[10px] uppercase tracking-wider mb-1">Pro</span>
+                <span className={getStyleByText(row.plan_pro)}>{row.plan_pro}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
