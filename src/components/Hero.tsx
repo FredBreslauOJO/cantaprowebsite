@@ -1,5 +1,4 @@
 "use client";
-import { Star } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -17,21 +16,6 @@ export default function Hero() {
           <source src="/loginVid.webm" type="video/webm" />
           Seu navegador não suporta vídeos em HTML5.
         </video>
-      </div>
-
-      {/* SELO BRUTALISTA DE NOTA (CANTO SUPERIOR DIREITO FLUTUANTE) */}
-      <div className="absolute top-28 right-6 md:right-12 z-20 bg-yellow-400 border-4 border-black text-black font-black px-4 py-3 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] rounded-2xl transform rotate-6 hover:rotate-0 transition-transform cursor-pointer flex flex-col items-center gap-0.5 select-none animate-bounce duration-1000">
-        <span className="text-xs uppercase tracking-widest font-black text-black/60">Nota Geral</span>
-        <div className="flex items-center gap-1.5">
-          <span className="text-2xl font-black tracking-tight leading-none">4.82</span>
-          <div className="flex text-black">
-            <Star size={16} fill="currentColor" strokeWidth={2.5} />
-            <Star size={16} fill="currentColor" strokeWidth={2.5} />
-            <Star size={16} fill="currentColor" strokeWidth={2.5} />
-            <Star size={16} fill="currentColor" strokeWidth={2.5} />
-            <Star size={16} fill="currentColor" strokeWidth={1} className="opacity-80" />
-          </div>
-        </div>
       </div>
 
       {/* CONTEÚDO DO TEXTO BRUTALISTA */}
@@ -64,6 +48,16 @@ export default function Hero() {
             Ver Recursos
           </a>
         </div>
+
+        {/* 🌟 IMPLEMENTAÇÃO DO NOVO SVG DE AVALIAÇÃO CENTRALIZADO */}
+        <div className="mt-10 flex justify-center">
+          <img 
+            src="/nota-avaliacao.svg" 
+            alt="Nota 4.8 / 5.0 com mais de 3000 avaliações" 
+            className="h-auto max-w-[240px] md:max-w-[320px] drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]"
+          />
+        </div>
+
       </div>
     </section>
   );
