@@ -30,7 +30,7 @@ export default function Footer() {
               OJO STUDIO
             </a>
           </p>
-          <p>Todos os direitos reservados</p>
+          <p>CANTA.PRO® é uma Marca Registrada. Todos os direitos reservados</p>
           
           {/* LINKS DE NAVEGAÇÃO DO RODAPÉ */}
           <div className="flex gap-4 justify-center md:justify-end pt-2 text-gray-400 font-bold">
