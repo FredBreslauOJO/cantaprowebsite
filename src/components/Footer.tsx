@@ -27,10 +27,11 @@ export default function Footer() {
               rel="noopener noreferrer" 
               className="text-white hover:text-yellow-400 transition-colors underline underline-offset-4 decoration-2"
             >
-              OJO STUDIO
+              OJO STUDIO®
             </a>
           </p>
-          <p>CANTA.PRO® é uma Marca Registrada. Todos os direitos reservados</p>
+          <p>CANTA.PRO® é uma Marca Registrada.</p>
+          <p> Todos os direitos reservados</p>
           
           {/* LINKS DE NAVEGAÇÃO DO RODAPÉ */}
           <div className="flex gap-4 justify-center md:justify-end pt-2 text-gray-400 font-bold">
