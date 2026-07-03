@@ -48,16 +48,6 @@ export default function Hero() {
             Ver Recursos
           </a>
         </div>
-
-        {/* 🌟 IMPLEMENTAÇÃO DO NOVO SVG DE AVALIAÇÃO CENTRALIZADO */}
-        <div className="mt-10 flex justify-center">
-          <img 
-            src="/nota-avaliacao.svg" 
-            alt="Nota 4.8 / 5.0 com mais de 3000 avaliações" 
-            className="h-auto max-w-[240px] md:max-w-[320px] drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]"
-          />
-        </div>
-
       </div>
     </section>
   );
