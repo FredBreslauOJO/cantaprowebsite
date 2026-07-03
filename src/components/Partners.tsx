@@ -1,4 +1,4 @@
-import { Handshake, Megaphone, GraduationCap } from "lucide-react";
+import { Briefcase, Megaphone, GraduationCap } from "lucide-react";
 
 export default function Partners() {
   return (
@@ -8,7 +8,7 @@ export default function Partners() {
         {/* TEXTOS DE CONVERSÃO */}
         <div className="flex-1 text-center lg:text-left space-y-6">
           <div className="inline-flex items-center gap-2 bg-yellow-400 text-black font-black text-xs uppercase tracking-widest px-4 py-1.5 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
-            <Handshake size={16} /> Programa de Parcerias
+            <Briefcase size={16} /> Programa de Parcerias
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none text-white drop-shadow-[0_4px_4px_rgba(255,204,0,0.3)]">
