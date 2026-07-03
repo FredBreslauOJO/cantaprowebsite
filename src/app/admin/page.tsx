@@ -56,7 +56,7 @@ export default function AdminPanel() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (senha === "canta2026") setAutenticado(true);
+    if (senha === "Afa#fvg08") setAutenticado(true);
     else alert("Senha Incorreta!");
   };
 
