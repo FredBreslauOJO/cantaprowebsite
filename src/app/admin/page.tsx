@@ -31,8 +31,12 @@ export default function AdminPanel() {
     if (autenticado) carregarDados();
   }, [autenticado]);
 
+  // ==========================================
+  // FUNÇÕES DA TABELA DE PLANOS (MATRIX)
+  // ==========================================
   const handleUpdateMatrixRow = async (id: number, campos: any) => {
     await supabase.from("feature_matrix").update(campos).eq("id", id);
+    setMatrix(matrix.map(m => m.id === id ? { ...m, ...campos } : m));
   };
 
   const handleAddMatrixRow = async () => {
@@ -48,7 +52,30 @@ export default function AdminPanel() {
     }
   };
 
-  // Atualizar Status do Ticket
+  // ==========================================
+  // FUNÇÕES DO FAQ
+  // ==========================================
+  const handleUpdateFaq = async (id: number, campos: any) => {
+    await supabase.from("faq").update(campos).eq("id", id);
+    setFaq(faq.map(f => f.id === id ? { ...f, ...campos } : f));
+  };
+
+  const handleAddFaq = async () => {
+    const novoFaq = { question: "Nova Dúvida?", answer: "Resposta detalhada aqui.", display_order: faq.length + 1 };
+    const { data } = await supabase.from("faq").insert([novoFaq]).select();
+    if (data) setFaq([...faq, data[0]]);
+  };
+
+  const handleDeleteFaq = async (id: number) => {
+    if (confirm("Deseja mesmo excluir esta pergunta do FAQ?")) {
+      await supabase.from("faq").delete().eq("id", id);
+      setFaq(faq.filter(f => f.id !== id));
+    }
+  };
+
+  // ==========================================
+  // FUNÇÕES DE TICKETS
+  // ==========================================
   const handleUpdateTicketStatus = async (id: number, newStatus: string) => {
     await supabase.from("contacts").update({ status: newStatus }).eq("id", id);
     setContatos(contatos.map(c => c.id === id ? { ...c, status: newStatus } : c));
@@ -60,7 +87,6 @@ export default function AdminPanel() {
     else alert("Senha Incorreta!");
   };
 
-  // Filtragem local
   const ticketsFiltrados = contatos.filter(c => {
     const matchStatus = filtroStatus === "Todos" || c.status === filtroStatus;
     const matchAssunto = filtroAssunto === "Todos" || c.subject === filtroAssunto;
@@ -96,6 +122,7 @@ export default function AdminPanel() {
     <div className="min-h-screen bg-gray-50 py-16 px-6">
       <div className="max-w-6xl mx-auto">
         
+        {/* CABEÇALHO DO PAINEL */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
           <div>
             <h1 className="text-4xl font-black uppercase tracking-tight">Painel de Controle</h1>
@@ -109,9 +136,11 @@ export default function AdminPanel() {
           </div>
         </div>
 
-        {/* HELPDESK TICKETS */}
+        {/* ========================================== */}
+        {/* ABA: TICKETS (HELPDESK) */}
+        {/* ========================================== */}
         {abaAtiva === "contatos" && (
-          <div className="space-y-6">
+          <div className="space-y-6 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 bg-white p-4 border-4 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <h2 className="text-2xl font-black uppercase">Helpdesk</h2>
               <div className="flex gap-4 w-full md:w-auto">
@@ -167,15 +196,109 @@ export default function AdminPanel() {
           </div>
         )}
 
-        {/* ... (aba Matrix se mantem) ... */}
+        {/* ========================================== */}
+        {/* ABA: PLANOS (FEATURE MATRIX) */}
+        {/* ========================================== */}
         {abaAtiva === "matrix" && (
-           <div className="w-full overflow-hidden rounded-2xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white p-4 space-y-4">
-              <p className="font-bold">Gerenciador de Planos ativo.</p>
+           <div className="space-y-6 animate-in fade-in duration-300">
+              <div className="flex justify-between items-center bg-white p-4 border-4 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl font-black uppercase">Tabela de Planos</h2>
+                <button onClick={handleAddMatrixRow} className="btn-brutal !px-4 !py-2 text-sm rounded-xl">
+                  + Adicionar Linha
+                </button>
+              </div>
+              
+              <div className="grid gap-4">
+                {matrix.map(m => (
+                  <div key={m.id} className="card-brutal p-6 rounded-2xl bg-white grid md:grid-cols-5 gap-4 items-end">
+                    <div className="md:col-span-2">
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-500 block mb-1">Funcionalidade</label>
+                      <input 
+                        type="text" value={m.feature_name} 
+                        onChange={(e) => handleUpdateMatrixRow(m.id, { feature_name: e.target.value })}
+                        className="w-full border-2 border-black p-3 font-bold text-sm rounded-xl outline-none focus:border-yellow-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-500 block mb-1">Free</label>
+                      <input 
+                        type="text" value={m.plan_free} 
+                        onChange={(e) => handleUpdateMatrixRow(m.id, { plan_free: e.target.value })}
+                        className="w-full border-2 border-black p-3 font-bold text-sm rounded-xl outline-none focus:border-yellow-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-500 block mb-1">Basic</label>
+                      <input 
+                        type="text" value={m.plan_basic} 
+                        onChange={(e) => handleUpdateMatrixRow(m.id, { plan_basic: e.target.value })}
+                        className="w-full border-2 border-black p-3 font-bold text-sm rounded-xl outline-none focus:border-yellow-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-500 block mb-1">Pro</label>
+                      <input 
+                        type="text" value={m.plan_pro} 
+                        onChange={(e) => handleUpdateMatrixRow(m.id, { plan_pro: e.target.value })}
+                        className="w-full border-2 border-black p-3 font-bold text-sm rounded-xl outline-none focus:border-yellow-400"
+                      />
+                    </div>
+                    <button onClick={() => handleDeleteMatrixRow(m.id)} className="md:col-span-5 text-red-600 font-bold text-sm text-right hover:underline mt-2">
+                      Excluir Linha
+                    </button>
+                  </div>
+                ))}
+              </div>
            </div>
         )}
+
+        {/* ========================================== */}
+        {/* ABA: FAQ */}
+        {/* ========================================== */}
         {abaAtiva === "faq" && (
-           <div className="w-full overflow-hidden rounded-2xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white p-4 space-y-4">
-              <p className="font-bold">Gerenciador de FAQ ativo.</p>
+           <div className="space-y-6 animate-in fade-in duration-300">
+              <div className="flex justify-between items-center bg-white p-4 border-4 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl font-black uppercase">Gerenciador de FAQ</h2>
+                <button onClick={handleAddFaq} className="btn-brutal !px-4 !py-2 text-sm rounded-xl">
+                  + Nova Pergunta
+                </button>
+              </div>
+
+              <div className="grid gap-6">
+                {faq.map(f => (
+                  <div key={f.id} className="card-brutal p-6 rounded-2xl bg-white flex flex-col gap-4">
+                    <div>
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-500 block mb-1">Pergunta</label>
+                      <input 
+                        type="text" value={f.question} 
+                        onChange={(e) => handleUpdateFaq(f.id, { question: e.target.value })}
+                        className="w-full border-2 border-black p-3 font-bold text-lg rounded-xl outline-none focus:border-yellow-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-500 block mb-1">Resposta</label>
+                      <textarea 
+                        rows={3} value={f.answer} 
+                        onChange={(e) => handleUpdateFaq(f.id, { answer: e.target.value })}
+                        className="w-full border-2 border-black p-3 font-bold text-base rounded-xl outline-none focus:border-yellow-400 resize-none"
+                      />
+                    </div>
+                    <div className="flex justify-between items-center mt-2">
+                      <div className="flex items-center gap-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-gray-500">Ordem de Exibição:</label>
+                        <input 
+                          type="number" value={f.display_order} 
+                          onChange={(e) => handleUpdateFaq(f.id, { display_order: parseInt(e.target.value) || 0 })}
+                          className="w-20 border-2 border-black p-1 text-center font-bold text-sm rounded-lg outline-none focus:border-yellow-400"
+                        />
+                      </div>
+                      <button onClick={() => handleDeleteFaq(f.id)} className="text-red-600 font-bold text-sm hover:underline">
+                        Excluir Pergunta
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
            </div>
         )}
 

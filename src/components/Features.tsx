@@ -1,11 +1,11 @@
-import { Play, Zap, Users, Download } from "lucide-react";
+import { Search, Zap, Music, Users } from "lucide-react";
 
 export default function Features() {
   const features = [
     {
-      icon: <Play size={48} strokeWidth={2} />,
-      title: "Modo Performance",
-      description: "Tela escura, letras imensas, sem distrações. Feito para você não errar a letra nem no palco mais escuro."
+      icon: <Search size={48} strokeWidth={2} />,
+      title: "Importação Mágica",
+      description: "Busque por nome e artista e pumba! A música inteira vem da internet direto pro app com um clique, já com sincronia de tempo e auto-scroll. Economize horas."
     },
     {
       icon: <Zap size={48} strokeWidth={2} />,
@@ -13,14 +13,14 @@ export default function Features() {
       description: "A mágica acontece: o app rola a letra no tempo exato da música e já pula pra próxima sozinho."
     },
     {
-      icon: <Users size={48} strokeWidth={2} />,
-      title: "Banda 100% Alinhada",
-      description: "Mudou o setlist no camarim? O painel de todos os músicos atualiza na hora, sem confusão."
+      icon: <Music size={48} strokeWidth={2} />,
+      title: "Suporte para Cifras",
+      description: "Não é só letra! Cole suas cifras e deixe o app rolar a tela automaticamente. A mesma facilidade absurda, feita sob medida para instrumentistas."
     },
     {
-      icon: <Download size={48} strokeWidth={2} />,
-      title: "Download Offline",
-      description: "Baixe as letras direto no app e não dependa da internet lixo do barzinho para fazer o seu show."
+      icon: <Users size={48} strokeWidth={2} />,
+      title: "Banda 100% Alinhada",
+      description: "Mudou o setlist no camarim? O painel de todos os músicos atualiza na hora, sem confusão ou papel voando."
     }
   ];
 
