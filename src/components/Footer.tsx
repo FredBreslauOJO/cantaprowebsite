@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
           />
         </div>
 
-        {/* INFORMAÇÕES E LINKS EM TAMANHO REDUZIDO (text-xs) */}
+        {/* INFORMAÇÕES E LINKS */}
         <div className="text-xs font-bold text-gray-500 uppercase tracking-widest text-center md:text-right space-y-1.5">
           <p className="text-gray-400">
             Feito com ❤︎ por{" "}
@@ -31,10 +32,13 @@ export default function Footer() {
             </a>
           </p>
           <p>CANTA.PRO® é uma Marca Registrada.</p>
-          <p> Todos os direitos reservados</p>
+          <p>Todos os direitos reservados</p>
           
-          {/* LINKS DE NAVEGAÇÃO DO RODAPÉ */}
-          <div className="flex gap-4 justify-center md:justify-end pt-2 text-gray-400 font-bold">
+          {/* LINKS DE NAVEGAÇÃO DO RODAPÉ COM INSTAGRAM */}
+          <div className="flex flex-wrap gap-4 justify-center md:justify-end pt-3 text-gray-400 font-bold items-center mt-2">
+            <a href="https://www.instagram.com/canta.pro.app" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors text-white mr-2">
+              <Instagram size={22} />
+            </a>
             <a href="/termos" className="hover:text-white transition-colors">Termos de Uso</a>
             <a href="/privacidade" className="hover:text-white transition-colors">Privacidade</a>
             <a href="mailto:contato@canta.pro" className="hover:text-white transition-colors">Contato</a>
