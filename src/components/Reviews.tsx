@@ -40,11 +40,11 @@ export default function Reviews() {
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none text-white">
-            Mais de 3.000 Músicos <br />Já Deixaram o Papel Para Trás.
+            Mais de 12.000 Músicos <br />Já Deixaram o Papel Para Trás.
           </h2>
           
           <p className="text-lg md:text-xl font-bold text-gray-300 max-w-2xl leading-relaxed">
-            De vocalistas de barzinho a grandes produções corporativas. O CANTA.PRO é o padrão de palco para quem cansou de carregar pastas pesadas, esquecer arranjos de última hora ou errar a letra sob os holofotes.
+            De estudantes de música a grandes produções e espetáculos. O CANTA.PRO é o padrão de palco para quem cansou de carregar pastas pesadas, esquecer arranjos de última hora ou errar a letra sob os holofotes.
           </p>
         </div>
 
