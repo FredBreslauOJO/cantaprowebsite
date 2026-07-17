@@ -4,23 +4,23 @@ export default function Features() {
   const features = [
     {
       icon: <Search size={36} strokeWidth={2.5} />,
-      title: "Importação Mágica",
-      description: "Busque por nome e artista e pumba! A música inteira vem da internet direto pro app com um clique. Economize horas."
+      title: "Importação Online",
+      description: "Busque por nome e artista na nossa base web e a música vem completa direto pro seu app. Esqueça a digitação manual."
     },
     {
       icon: <Zap size={36} strokeWidth={2.5} />,
-      title: "Auto-Play Sincronizado",
-      description: "A mágica acontece: o app rola a letra no tempo exato da música e já pula pra próxima sozinho."
+      title: "Teleprompter Inteligente",
+      description: "O app rola a letra individualmente no seu aparelho no tempo exato da música. O fim dos brancos na hora de cantar."
     },
     {
       icon: <Music size={36} strokeWidth={2.5} />,
       title: "Suporte para Cifras",
-      description: "Não é só letra! Cole suas cifras e deixe rolar. A mesma facilidade absurda, feita para instrumentistas."
+      description: "Não é só letra! Adicione suas cifras e deixe rolar. A mesma facilidade adaptada sob medida para instrumentistas."
     },
     {
       icon: <Users size={36} strokeWidth={2.5} />,
-      title: "Banda 100% Alinhada",
-      description: "Mudou o setlist no camarim? O painel de todos os músicos atualiza na hora, sem papel voando."
+      title: "Colaboração em Nuvem",
+      description: "Compartilhe o banco de dados. Alterou o repertório? O painel é atualizado e toda a banda acessa a lista atualizada."
     }
   ];
 
@@ -32,7 +32,7 @@ export default function Features() {
             Chega de Amadorismo
           </h2>
           <p className="text-black font-black tracking-widest uppercase text-xl">
-            As armas que sua banda precisa para um show impecável.
+            As ferramentas digitais para um show organizado e sem erros.
           </p>
         </div>
 

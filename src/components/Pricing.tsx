@@ -26,9 +26,9 @@ export default function Pricing() {
              <div className="w-full md:w-1/3">
                 <ul className="space-y-4 font-bold text-lg text-gray-800">
                   <li className="flex items-center gap-3"><span className="text-green-500">✓</span> Máximo de 10 Músicas</li>
-                  <li className="flex items-center gap-3"><span className="text-green-500">✓</span> Setlists Ilimitados</li>
-                  <li className="flex items-center gap-3"><span className="text-green-500">✓</span> Impressão de Roteiros</li>
-                  <li className="flex items-center gap-3"><span className="text-green-500">✓</span> Links Públicos de Palco</li>
+                  <li className="flex items-center gap-3"><span className="text-green-500">✓</span> Máximo de 1 Repertório</li>
+                  <li className="flex items-center gap-3 text-gray-400 line-through"><span className="text-gray-400">✗</span> Importação Web (LRCLIB)</li>
+                  <li className="flex items-center gap-3 text-gray-400 line-through"><span className="text-gray-400">✗</span> Sincronia de Timecode</li>
                 </ul>
              </div>
              <div className="w-full md:w-1/3 flex md:justify-end mt-6 md:mt-0">
@@ -48,10 +48,10 @@ export default function Pricing() {
              </div>
              <div className="w-full md:w-1/3">
                 <ul className="space-y-4 font-bold text-lg text-black">
-                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Músicas e Setlists Ilimitados</li>
-                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Busca Online Global (LRCLIB)</li>
-                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Importação Automática</li>
-                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Instalação Offline (PWA)</li>
+                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Músicas Ilimitadas</li>
+                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Repertórios Ilimitados</li>
+                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Busca Online (LRCLIB)</li>
+                  <li className="flex items-center gap-3"><span className="text-black">✓</span> Acesso Offline</li>
                 </ul>
              </div>
              <div className="w-full md:w-1/3 flex md:justify-end mt-6 md:mt-0">
@@ -74,9 +74,10 @@ export default function Pricing() {
              </div>
              <div className="w-full md:w-1/3">
                 <ul className="space-y-4 font-bold text-lg text-gray-200">
-                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Tudo do plano Básico</li>
-                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Modo Banda (Sincronizado)</li>
-                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Auto-Play de Palco</li>
+                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Tudo do plano Basic</li>
+                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Colaboração com a Banda</li>
+                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Exportação de Roteiros</li>
+                  <li className="flex items-center gap-3"><span className="text-yellow-400">✓</span> Editor de Timecode Avançado</li>
                 </ul>
              </div>
              <div className="w-full md:w-1/3 flex md:justify-end mt-6 md:mt-0">
@@ -87,7 +88,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* TABELA DE COMPARAÇÃO COMPLETA MOVIDA PARA DEBAIXO DOS PLANOS */}
+        {/* TABELA DE COMPARAÇÃO */}
         <div className="mt-16">
           <FeatureMatrix />
         </div>
