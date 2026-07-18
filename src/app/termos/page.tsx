@@ -32,14 +32,14 @@ export default function TermosPage() {
         <article className="card-brutal bg-white p-8 md:p-16 rounded-[2rem]">
           <div className="prose prose-lg max-w-none text-gray-800 font-medium">
             
-            <p className="font-bold text-xl mb-8 border-b-2 border-gray-200 pb-8">
-              Este contrato de adesão eletrônico regula as condições gerais de utilização do aplicativo web progressivo (PWA) CANTA.PRO, acessível através do endereço eletrônico oficial https://www.canta.pro/, de propriedade e titularidade de seu desenvolvedor e fundadores licenciantes. Ao efetuar o cadastro, acessar a plataforma ou utilizar qualquer funcionalidade, o usuário adere integralmente a este documento.
+            <p className="font-bold text-xl mb-8 border-b-2 border-gray-200 pb-8 leading-relaxed">
+              Este contrato de adesão eletrônico regula as condições gerais de utilização do aplicativo web progressivo (PWA) CANTA.PRO, acessível através do endereço eletrônico oficial https://www.canta.pro/, desenvolvido e de propriedade exclusiva da <strong>OJO STUDIO EXPERIÊNCIAS DIGITAIS LTDA</strong>, pessoa jurídica de direito privado inscrita no CNPJ sob o nº <strong>58.505.369/0001-36</strong>, com sede na Rua Maria da Glória dos Santos Antunes, 1116, Residencial Villaggio, Bauru - SP, CEP 17018-821. Ao efetuar o cadastro, acessar a plataforma ou utilizar qualquer funcionalidade, o usuário adere integralmente a este documento.
             </p>
 
             <h2 className="text-2xl font-black uppercase tracking-tight text-black mt-12 mb-6">Cláusula 1 — Das Definições e do Objeto do Contrato</h2>
             <ul className="space-y-4 list-disc pl-6">
               <li><strong>Natureza do Serviço:</strong> O CANTA.PRO consiste em um utilitário computacional em nuvem estruturado como Progressive Web Application (PWA) de teleprompting profissional e gestão técnica de repertórios musicais.</li>
-              <li><strong>Inexistência de Distribuição:</strong> O CANTA.PRO não atua como agregadora, editora ou distribuidora de música. Fornecemos única e exclusivamente uma ferramenta de processamento lógico de dados de texto inseridos voluntariamente pelo usuário.</li>
+              <li><strong>Inexistência de Distribuição:</strong> A OJO STUDIO e o CANTA.PRO não atuam como agregadora, editora ou distribuidora de música. Fornecemos única e exclusivamente uma ferramenta de processamento lógico de dados de texto inseridos voluntariamente pelo usuário.</li>
               <li><strong>Concessão de Licença:</strong> Concede-se uma licença de uso limitada, revogável e intransferível para uso do software (SaaS), sem transferência de direito autoral ou código-fonte.</li>
               <li><strong>Estrutura dos Planos:</strong> O serviço divide-se entre Planos Gratuito, Básico e Pro, com limites detalhados no site oficial.</li>
             </ul>
@@ -58,7 +58,7 @@ export default function TermosPage() {
             </ul>
 
             <h2 className="text-2xl font-black uppercase tracking-tight text-black mt-12 mb-6">Cláusula 4 — Da Propriedade Intelectual</h2>
-            <p className="mb-4">Todos os direitos sobre o código-fonte, arquitetura de timecode, algoritmos e interface visual pertencem exclusivamente aos fundadores do CANTA.PRO. É absolutamente vedado:</p>
+            <p className="mb-4">Todos os direitos sobre o código-fonte, arquitetura de timecode, algoritmos e interface visual pertencem exclusivamente à OJO STUDIO. É absolutamente vedado:</p>
             <ul className="space-y-4 list-disc pl-6">
               <li>Realizar engenharia reversa, desmontagem ou obter o código-fonte.</li>
               <li>Desenvolver ou comercializar softwares derivados baseados no conjunto visual (trade dress) do CANTA.PRO.</li>
@@ -73,7 +73,7 @@ export default function TermosPage() {
             </ul>
 
             <h2 className="text-2xl font-black uppercase tracking-tight text-black mt-12 mb-6">Cláusula 6 — Notificação e Retirada (Notice and Takedown)</h2>
-            <p className="mb-4">O CANTA.PRO adota conduta rígida de respeito à propriedade intelectual (Art. 19, MCI). Denúncias formais de violação devem ser enviadas para:</p>
+            <p className="mb-4">A OJO STUDIO adota conduta rígida de respeito à propriedade intelectual (Art. 19, MCI). Denúncias formais de violação devem ser enviadas para:</p>
             <div className="bg-gray-100 p-4 border-l-4 border-black font-bold my-4">
               E-mail de Conformidade: app@canta.pro
             </div>
@@ -89,7 +89,7 @@ export default function TermosPage() {
             <h2 className="text-2xl font-black uppercase tracking-tight text-black mt-12 mb-6">Cláusula 8 — Lei Aplicável e Foro</h2>
             <ul className="space-y-4 list-disc pl-6">
               <li><strong>Relações de Consumo:</strong> Faculta-se ao usuário consumidor eleger o foro de seu domicílio.</li>
-              <li><strong>Relações B2B e Parcerias:</strong> Elege-se de forma exclusiva o foro da Comarca de Bauru / SP para dirimir litígios de natureza comercial.</li>
+              <li><strong>Relações B2B e Parcerias:</strong> Elege-se de forma exclusiva o foro da Comarca de Bauru / SP para dirimir litígios de natureza comercial ou institucional.</li>
             </ul>
 
           </div>
