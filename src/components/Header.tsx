@@ -11,32 +11,32 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         
         {/* LOGO DO CANTA.PRO */}
-        <a href="/" className="hover:scale-105 transition-transform flex items-center">
+        <a href="/" className="hover:scale-105 transition-transform flex items-center shrink-0">
           <Image 
             src="/CantaProLogo.svg" 
             alt="Canta.Pro Logo" 
             width={180} 
             height={40} 
-            className="h-auto"
+            className="h-auto w-32 md:w-44"
             priority 
           />
         </a>
 
         {/* NAVEGAÇÃO DESKTOP */}
-        <nav className="hidden md:flex items-center gap-8 font-black text-base uppercase tracking-widest">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8 font-black text-sm lg:text-base uppercase tracking-widest">
           <a href="/#features" className="hover:text-yellow-500 transition-colors">Recursos</a>
           <a href="/#pricing" className="hover:text-yellow-500 transition-colors">Planos</a>
           <a href="/#faq" className="hover:text-yellow-500 transition-colors">FAQ</a>
           <a href="/tutorial" className="hover:text-yellow-500 transition-colors">Tutorial</a>
           <a href="/contato" className="hover:text-yellow-500 transition-colors">Contato</a>
-          <a href="https://www.instagram.com/canta.pro.app" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition-colors text-black border-l-2 border-gray-200 pl-8">
+          <a href="https://www.instagram.com/canta.pro.app" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition-colors text-black border-l-2 border-gray-200 pl-4 lg:pl-8">
             <Instagram size={24} />
           </a>
         </nav>
 
-        {/* BOTÃO ENTRAR DESKTOP */}
-        <div className="hidden md:block">
-          <a href="https://app.canta.pro" className="btn-brutal text-sm !px-6 !py-3">
+        {/* BOTÃO ENTRAR DESKTOP (Corrigido para não quebrar) */}
+        <div className="hidden md:block shrink-0 ml-4">
+          <a href="https://app.canta.pro" className="btn-brutal text-sm !px-4 lg:!px-6 !py-3 whitespace-nowrap">
             Entrar no App
           </a>
         </div>
@@ -44,7 +44,7 @@ export default function Header() {
         {/* BOTÃO DO MENU HAMBÚRGUER (MOBILE) */}
         <button 
           onClick={() => setMenuAberto(!menuAberto)}
-          className="block md:hidden bg-black text-white p-3 border-2 border-black active:translate-y-0.5 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+          className="block md:hidden bg-black text-white p-3 border-2 border-black active:translate-y-0.5 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] shrink-0"
           aria-label="Toggle Menu"
         >
           {menuAberto ? <X size={24} /> : <Menu size={24} />}
