@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
-import WebAppTech from "@/components/WebAppTech"; // O nosso novo componente entra aqui!
+import WebAppTech from "@/components/WebAppTech"; 
 import Features from "@/components/Features";
 import Reviews from "@/components/Reviews";
 import AllFeatures from "@/components/AllFeatures";
+import MetaGlasses from "@/components/MetaGlasses"; // NOVA SESSÃO DOS ÓCULOS
 import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
 import Partners from "@/components/Partners";
@@ -14,7 +15,11 @@ export default function Home() {
       <WebAppTech /> 
       <Features />
       <Reviews />
-      <AllFeatures /> 
+      <AllFeatures />
+      
+      {/* A grande chamada com Parallax e Animação */}
+      <MetaGlasses /> 
+      
       <Pricing />
       <Faq />
       <Partners />
