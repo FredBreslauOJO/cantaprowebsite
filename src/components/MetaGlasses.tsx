@@ -138,13 +138,13 @@ export default function MetaGlasses() {
                   <line x1="470" y1="240" x2="500" y2="240" stroke="#FACC15" strokeWidth="8" />
                   <line x1="470" y1="260" x2="620" y2="260" stroke="#fff" strokeWidth="8" />
                   <line x1="470" y1="280" x2="560" y2="280" stroke="#fff" strokeWidth="8" />
-                  {/* Bloco3 */}
+                  {/* Bloco 3 */}
                   <line x1="470" y1="320" x2="540" y2="320" stroke="#FACC15" strokeWidth="8" />
                   <line x1="470" y1="340" x2="600" y2="340" stroke="#fff" strokeWidth="8" />
                 </g>
               </g>
 
-              {/* Câmera Direita */}
+              {/* Câmera Direita*/}
               <circle cx="620" cy="170" r="14" fill="#000" />
               <circle cx="620" cy="170" r="4" fill="#fff" stroke="none" />
 
