@@ -83,7 +83,7 @@ export default function MetaGlasses() {
           <div className="w-full animate-float-continuous relative">
             
             {/* Brilho neon de fundo */}
-            <div className="absolute inset-0 bg-cyan-400 blur-[100px] opacity-20 rounded-full scale-75 z-0"></div>
+            <div className="absolute inset-0 bg-yellow-400 blur-[100px] opacity-40 rounded-full scale-120 z-0"></div>
 
             <svg 
               viewBox="0 0 800 450" 
